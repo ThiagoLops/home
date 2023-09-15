@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    /*Estilo para a todo o site;*/
+}
+
+:root {
+  --text--color: white;
+  --bg--image: url(./arquivos/Background.png);
+  --button--color: rgba(255, 255, 255, 0.5);
+  --backgroud--button: rgba(255, 255, 255, 0.1);
+  --background--moviment: rgba(255, 255, 255, 0.05);
+  --bg--imagem--button: url(./arquivos/estrela.svg);
+    /*Criando variaveis na 'Raiz' do html
+  Foi utilizada para transicionar de um estilo para outro */
+}
+
+.light {
+  --text--color: black;
+  --bg--image: url(./arquivos/bg-mobile-light.png);
+  --button--color: rgba(0, 0, 0, 0.5);
+  --backgroud--button: rgba(0, 0, 0, 0.1);
+  --background--moviment: rgba(0, 0, 0, 0.05);
+  --bg--imagem--button: url(./arquivos/sol.svg);
+  /*Chamando o html para ser uma pagina com outro estilo, diferente do original;
+ Aqui aconteceu uma sobreposição, não excluindo a anterior (O CSS aplica a ultima declaração, como sobrepuz, esse permanece por cima);
+ 
+ Ao ativar ou desativar essa class, os elementos se alteram,
+ que se torna possivel apenas pelas variaveis trabalhando em conjuto.*/
+
+}
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text--color);
+  /*Para utilizar a fonte "Inter" foi necessario colocar o codigo de importação no HTML, para depois fazer a declaração */
+
+}
+
+body {
+  background: var(--bg--image) no-repeat top center/cover;
+  /*Deixei as duas formas de declaração, a completa e a simplificada. */
+
+}
+
+#container {
+  width: 492px;
+  margin: auto;
+  display: flow-root;
+  text-align: center;
+}
+
+div img {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 112px;
+  height: 112px;
+  /*Alinhamento imagem ao centro, e definião de tamanho*/
+
+}
+
+div > p {
+  padding: 24px;
+  font-weight: 400px;
+  line-height: 24px;
+  text-align: center;
+  /*Alinhamento do text ao centro; */
+}
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+
+   /*Diminuição da caixa para apliacação de efeitos */
+  /* 
+  Position = posição para elementos.
+  Por padrão a posição dos elementos vem static (que não se alteram com definições top, bottom, left, right)
+  alterando ara 'Relative, consiguiremos fazer alterações em sua posição.
+  */
+}
+
+div > button {
+  width: 32px;
+  height: 32px;
+  left: 0;
+  background: white var(--bg--imagem--button) no-repeat center;
+  border: 0px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  /*Definição de novo eixo para alinhamento utilizando transform;
+  Com a position absolute pode alterar a posição do elemento 
+  Z-INDEX : altera a dimenção dos elementos, sobrepoem em camandas. */
+}
+
+.light div > button {
+  right: 0;
+  left: initial;
+    /*Transicionamento de botão de um lado para o outro;
+  definição do lado e reset do outro (voltar a posição inicial) */
+}
+
+div > span {
+  width: 64px;
+  height: 24px;
+  display: block;
+  border: 1px solid var(--button--color);
+  background: var(--backgroud--button, rgba(0, 0, 0, 0.05));
+  border-radius: 9999px;
+}
+
+div > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+div > ul > li {
+  height: 56px;
+}
+
+div > ul li:hover {
+  background: var(--background--moviment);
+}
+
+div > ul > li > a {
+  text-decoration: none;
+  font-weight: 500px;
+  border: 1px solid var(--button--color);
+
+  /*Alinhamento*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*Espaçamento */
+  padding: 16px 24px;
+  gap: 8px;
+  background-color: var(--backgroud--button);
+  border-radius: 8px;
+}
+
+div > a {
+  text-decoration: none;
+  font-size: 28px;
+  font-style: none;
+  /*Tirando efeitos de decoração padrão*/
+
+  padding: 24px;
+  border-radius: 100%;
+  gap: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Alinhamento ao centro*/
+
+}
+
+#sociallinks a:hover {
+  background-color: var(--background--moviment);
+  /* :hover é a ação ao passar o mouse por cima */
+
+}
+
+footer {
+  font-size: 14px;
+  padding: 24px;
+}
