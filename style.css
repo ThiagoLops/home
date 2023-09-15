@@ -39,13 +39,17 @@ body * {
 
 body {
   background: var(--bg--image) no-repeat top center/cover;
-  /*Deixei as duas formas de declaração, a completa e a simplificada. */
+  height: 100vh;
+  /*Fazer com que a imagem de fundo ocupe 100% de ocupação */
+
 
 }
 
 #container {
-  width: 492px;
+  width: 100%;
+  max-width: 492px;
   margin: auto;
+  padding-top: 56px;
   display: flow-root;
   text-align: center;
 }
@@ -172,4 +176,13 @@ div > a {
 footer {
   font-size: 14px;
   padding: 24px;
+}
+
+@media (min-width: 700px) {
+  :root {
+    --bg--image: url(./arquivos/BgDesktop.png);
+  }
+  .light {
+    --bg--image: url(./arquivos/BgDesktopLight.png);
+  }
 }
