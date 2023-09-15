@@ -99,13 +99,16 @@ div > button {
   /*Definição de novo eixo para alinhamento utilizando transform;
   Com a position absolute pode alterar a posição do elemento 
   Z-INDEX : altera a dimenção dos elementos, sobrepoem em camandas. */
+
+  animation: slide-back 0.3s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--background--moviment);
 }
 
 .light div > button {
-  right: 0;
-  left: initial;
-    /*Transicionamento de botão de um lado para o outro;
-  definição do lado e reset do outro (voltar a posição inicial) */
+  animation: slide-in 0.3s forwards;
 }
 
 div > span {
@@ -184,5 +187,23 @@ footer {
   }
   .light {
     --bg--image: url(./arquivos/BgDesktopLight.png);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
