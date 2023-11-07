@@ -7,10 +7,12 @@
 
 :root {
   --text--color: white;
-  --bg--image: url(./arquivos/Background.png);
+  --backgroud--body: black;
+  --bg--image: url(./arquivos/cuboBlack.jpg);
   --button--color: rgba(255, 255, 255, 0.5);
-  --backgroud--button: rgba(255, 255, 255, 0.1);
-  --background--moviment: rgba(255, 255, 255, 0.05);
+  --backgroud--button: #0000009e;
+  --background-color: rgb(0 0 0 / 69%);;
+  --background--moviment: rgba(0, 0, 0, 0.639);
   --bg--imagem--button: url(./arquivos/estrela.svg);
     /*Criando variaveis na 'Raiz' do html
   Foi utilizada para transicionar de um estilo para outro */
@@ -18,10 +20,11 @@
 
 .light {
   --text--color: black;
-  --bg--image: url(./arquivos/bg-mobile-light.png);
-  --button--color: rgba(0, 0, 0, 0.5);
+  --backgroud--body: white;
+  --bg--image: url(./arquivos/cuboWhite.jpg);
+  --button--color: rgba(255, 255, 255, 0.5);
   --backgroud--button: rgba(0, 0, 0, 0.1);
-  --background--moviment: rgba(0, 0, 0, 0.05);
+  --background--moviment: rgba(247, 247, 247, 0.66);
   --bg--imagem--button: url(./arquivos/sol.svg);
   /*Chamando o html para ser uma pagina com outro estilo, diferente do original;
  Aqui aconteceu uma sobreposição, não excluindo a anterior (O CSS aplica a ultima declaração, como sobrepuz, esse permanece por cima);
@@ -34,7 +37,7 @@ body * {
   font-family: "Inter", sans-serif;
   color: var(--text--color);
   /*Para utilizar a fonte "Inter" foi necessario colocar o codigo de importação no HTML, para depois fazer a declaração */
-
+ 
 }
 
 body {
@@ -42,6 +45,8 @@ body {
   height: 100vh;
   /*Fazer com que a imagem de fundo ocupe 100% de ocupação */
 
+  
+ background-color: var(--backgroud--body);
 
 }
 
@@ -89,7 +94,7 @@ div > button {
   width: 32px;
   height: 32px;
   left: 0;
-  background: white var(--bg--imagem--button) no-repeat center;
+  background: rgb(0, 0, 0) var(--bg--imagem--button) repeat center;
   border: 0px;
   border-radius: 50%;
   position: absolute;
@@ -170,6 +175,7 @@ div > a {
 
 }
 
+
 #sociallinks a:hover {
   background-color: var(--background--moviment);
   /* :hover é a ação ao passar o mouse por cima */
@@ -183,10 +189,10 @@ footer {
 
 @media (min-width: 700px) {
   :root {
-    --bg--image: url(./arquivos/BgDesktop.png);
+    --bg--image: url(./arquivos/cuboBlack.jpg);
   }
   .light {
-    --bg--image: url(./arquivos/BgDesktopLight.png);
+    --bg--image: url(./arquivos/cuboWhite.jpg);
   }
 }
 
